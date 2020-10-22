@@ -41,7 +41,7 @@ static void* pickNext(void* arg){
         pthread_mutex_lock(t->pmtx);
         testVal = t->count++;
         pthread_mutex_unlock(t->pmtx);
-        if(t->verbose && isPrime(testVal)){
+        if(isPrime(testVal) && t->verbose){
             printf("%d\n",testVal);
         }
     }
